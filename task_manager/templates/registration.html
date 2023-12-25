@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% load django_bootstrap5 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block content %}
+<h1 class="my-4">Регистрация</h1>
+<form method="post">
+  {%csrf_token %}
+
+  {% bootstrap_form form %}
+
+  {% bootstrap_button button_type="submit" content="Зарегистрировать" %}      
+</form>
+{% endblock %}

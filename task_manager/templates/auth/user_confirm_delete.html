@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <h1>Удалить пользователя?</h1>
+  <form method="post">
+    {% csrf_token %}
+    <input class="btn btn-danger" type="submit" value="Да, удалить">
+    <a href="{% url 'users' %}" class="btn btn-secondary">Отмена</a>
+  </form>
+{% endblock %}
