@@ -24,9 +24,11 @@ migrate:
 makemigrations:
 	$(MANAGE) makemigrations
 
-.PHONY: prod
-prod:
-	poetry run gunicorn -w $(WEB_CONCURRENCY) -b $(HOST):$(PORT) task_manager.wsgi:application
+# .PHONY: prod
+# prod:
+# 	poetry run gunicorn -w $(WEB_CONCURRENCY) -b $(HOST):$(PORT) task_manager.wsgi:application
+serv:
+	poetry run gunicorn -w 4 -b 127.0.0.1:8000 task_manager.wsgi:application
 
 .PHONY: dev
 dev:
