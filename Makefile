@@ -6,7 +6,8 @@ install:
 	poetry install
 
 .PHONY: setup
-setup:	install migrate
+setup:	
+	install migrate
 
 .PHONY: migrate
 migrate:
@@ -30,7 +31,7 @@ test:
 
 .PHONY: coverage
 coverage:
-	poetry run coverage run manage.py test task_manager/user -v 2
+	poetry run coverage run manage.py test task_manager/users -v 2
 
 .PHONY: makemessages 
 makemessages:
