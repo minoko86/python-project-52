@@ -47,7 +47,6 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'webserver',
     LOCAL_HOST,
-    'task-meneger-new.onrender.com',
 ]
 
 EXTERNAL_HOSTNAME = os.getenv('EXTERNAL_HOSTNAME')
@@ -123,11 +122,20 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.getenv(
+#             'DATABASE_URL',
+#             'postgresql://postgres:postgres@localhost:5432/postgres'
+#         ),
+#         conn_max_age=600
+#     )
+# }
+
 DATABASES = {
     'default': dj_database_url.config(
         default=os.getenv(
-            'DATABASE_URL',
-            'postgresql://postgres:postgres@localhost:5432/postgres'
+            'DATABASE_URL'
         ),
         conn_max_age=600
     )
