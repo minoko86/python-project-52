@@ -34,10 +34,6 @@ serv:
 dev:
 	$(MANAGE) runserver
 
-.PHONY: shell
-shell:
-	$(MANAGE) shell_plus
-
 .PHONY: test
 test:
 	$(MANAGE) test
