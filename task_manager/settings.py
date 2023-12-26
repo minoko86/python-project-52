@@ -40,6 +40,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']
+
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
@@ -160,6 +162,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
 
 LANGUAGE_CODE = 'en-us'
 
