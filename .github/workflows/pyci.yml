@@ -1,34 +1,43 @@
-name: pyci
+# This action is based on hexlet-bolerplates
 
-on: [push]
+name: Python CI
+
+on:
+  - push
+  - pull_request
 
 jobs:
-  run-linters:
-    name: Run linter and pytest
+  build:
     runs-on: ubuntu-latest
-
+#     strategy:
+#       matrix:
+#         # we want to test our package on several versions of Python
+#         python-version: [3.10.*]
     steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+#           python-version: ${{ matrix.python-version }}
+            python-version: '>=3.10 <3.11'
+        # make depends on poetry
       - name: Install dependencies
         run: |
-           pip install poetry
-           poetry update
-           make install
-      - name: Run tests
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          ROLLBAR_KEY: ${{ secrets.ROLLBAR_TOKEN }}
-          DEBUG: True
+          pip install poetry
+          make install
+      - name: Run linter
+        run: make lint
+      - name: Run test
         run: |
-           make test
-      - name: code coverage
+          make test
+        env:
+          DB_ENGINE: SQLite
+          SECRET_KEY: secret
+      - name: Publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
+        if: github.ref_name == 'main'
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: make test-coverage
           debug: true
-      - name: Run linter
-        run: |
-           make lint
