@@ -17,10 +17,11 @@ migrate:
 makemigrations:
 	$(MANAGE) makemigrations
 
-.PHONY: serv
+# .PHONY: serv
+# serv:
+# 	poetry run gunicorn -w 4 -b 127.0.0.1:8000 task_manager.wsgi:application
 serv:
-	poetry run gunicorn -w 4 -b 127.0.0.1:8000 task_manager.wsgi:application
-
+	poetry run gunicorn -w 5 -b 0.0.0.0:10000 task_manager.wsgi:application
 .PHONY: dev
 dev:
 	$(MANAGE) runserver
