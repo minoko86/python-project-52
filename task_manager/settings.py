@@ -40,7 +40,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']
+# CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']
 
 ALLOWED_HOSTS = [
     'localhost',
