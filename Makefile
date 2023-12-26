@@ -1,11 +1,3 @@
-ifneq (,$(wildcard .env))
-	include .env
-endif
-
-HOST ?= 127.0.0.1
-PORT ?= 8000
-WEB_CONCURRENCY ?= 4
-
 MANAGE := poetry run python manage.py
 
 
@@ -24,9 +16,7 @@ migrate:
 makemigrations:
 	$(MANAGE) makemigrations
 
-# .PHONY: prod
-# prod:
-# 	poetry run gunicorn -w $(WEB_CONCURRENCY) -b $(HOST):$(PORT) task_manager.wsgi:application
+.PHONY: serv
 serv:
 	poetry run gunicorn -w 4 -b 127.0.0.1:8000 task_manager.wsgi:application
 
