@@ -1,6 +1,10 @@
 {% extends "index.html" %}
 {% load django_bootstrap5 %}
 
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load static %}
+
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 

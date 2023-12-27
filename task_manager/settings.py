@@ -198,7 +198,7 @@ USE_TZ = True
 AUTH_USER_MODEL = "users.User"
 
 LANGUAGES = [
-    # ('en', _('English')),
+    ('en', _('English')),
     ('ru', _('Russian')),
 ]
 

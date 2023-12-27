@@ -4,6 +4,10 @@
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load static %}
+
 {% block content %}
 <h1 class="my-4">Изменение пользователя</h1>
 <form method="post">
