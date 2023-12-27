@@ -3,9 +3,12 @@
 
 {% bootstrap_css %}
 {% bootstrap_javascript %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load static %}
 
 {% block content %}
-<h1 class="my-4">Регистрация</h1>
+<h1 class="my-4">{% translate 'Registration' %}</h1>
 <form method="post">
   {%csrf_token %}
 

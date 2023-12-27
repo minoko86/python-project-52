@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-27 11:08+0500\n"
+"POT-Creation-Date: 2023-12-27 13:17+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,11 +36,11 @@ msgstr ""
 msgid "Вы не авторизованы! Пожалуйста, выполните вход."
 msgstr ""
 
-#: task_manager/settings.py:197
+#: task_manager/settings.py:201
 msgid "English"
 msgstr ""
 
-#: task_manager/settings.py:198
+#: task_manager/settings.py:202
 msgid "Russian"
 msgstr ""
 
@@ -68,7 +68,8 @@ msgstr ""
 msgid "Задача успешно удалена"
 msgstr ""
 
-#: task_manager/templates/index.html:48
+#: task_manager/templates/index.html:47
+#: task_manager/templates/registration.html:11
 msgid "Registration"
 msgstr ""
 
