@@ -2,8 +2,9 @@
 {% load django_bootstrap5 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
-{% comment %} {% get_current_language as LANGUAGE_CODE %} {% endcomment %}
+{% comment %} {{ LANGUAGE_CODE }} {% endcomment %}
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 {% load static %}
 <html lang="ru-ru">
   <head>
@@ -42,7 +43,7 @@
             <a class="nav-link" href="{% url 'login' %}">Вход</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'registration' %}">{% translate "Registration" %}</a>
+            <a class="nav-link" href="{% url 'registration' %}">{% trans "Registration" %}</a>
           </li>          
           {% endif %}
         </ul>

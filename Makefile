@@ -41,7 +41,7 @@ makemessages:
 
 .PHONY: compilemessages
 compilemessages:
-	poetry run django-admin compilemessages
+	poetry run django-admin compilemessages --ignore=.venv
 
 .PHONY: lint
 lint:
