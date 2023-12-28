@@ -8,7 +8,7 @@
   <h1>{% translate 'Delete task?' %}</h1>
   <form method="post">
     {% csrf_token %}
-    <input class="btn btn-danger" type="submit" value={% translate 'Yes, delete' %}>
-    <a href="{% url 'tasks' %}" class="btn btn-secondary">{% translate 'cancellation' %}</a>
+    <input class="btn btn-danger" type="submit" value="{% translate 'Yes, delete' %}">
+    {% comment %} <a href="{% url 'tasks' %}" class="btn btn-secondary">{% translate 'cancellation' %}</a> {% endcomment %}
   </form>
 {% endblock %}

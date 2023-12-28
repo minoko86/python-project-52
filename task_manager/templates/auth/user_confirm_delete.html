@@ -8,7 +8,9 @@
   <h1>{% translate 'Delete user?' %}</h1>
   <form method="post">
     {% csrf_token %}
-    <input class="btn btn-danger" type="submit" value={% translate 'Yes, delete' %}>
-    <a href="{% url 'users' %}" class="btn btn-secondary">{% translate 'cancellation' %}</a>
+    <input class="btn btn-danger" type="submit" value="{% translate 'Yes, delete' %}">
+    {% comment %} {% translate 'Yes, delete' as button_name %} {% endcomment %}
+		{% comment %} {% bootstrap_button button_type="submit" content=button_name style='danger' %} {% endcomment %}
+    {% comment %} <a href="{% url 'users' %}" class="btn btn-secondary">{% translate 'cancellation' %}</a> {% endcomment %}
   </form>
 {% endblock %}
