@@ -5,10 +5,11 @@
 {% load static %}
 
 {% block content %}
-  <h1>Удалить Метку?</h1>
+  <h1>{% translate 'Delete label?' %}</h1>
   <form method="post">
     {% csrf_token %}
-    <input class="btn btn-danger" type="submit" value="Да, удалить">
-    <a href="{% url 'labels' %}" class="btn btn-secondary">Отмена</a>
+    {% translate 'Yes, delete' as button_name %}
+    <input class="btn btn-danger" type="submit" value=button_name>
+    <a href="{% url 'labels' %}" class="btn btn-secondary">{% translate 'cancellation' %}</a>
   </form>
 {% endblock %}

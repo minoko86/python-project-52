@@ -9,8 +9,8 @@
 {% bootstrap_javascript %}
 
 {% block content %}
-<h1 class="my-4">Задачи</h1>
-<a class="nav-link" href="{% url 'create_task' %}">Создать задачу</a>
+<h1 class="my-4">{% translate 'Tasks' %}</h1>
+<a class="nav-link" href="{% url 'create_task' %}">{% translate 'Create task' %}</a>
 <div class="card mb-3">
   <div class="card-body bg-light">
     <form class="form-inline center" method="get" action="{% url 'tasks' %}">
@@ -18,11 +18,12 @@
 
       {% bootstrap_form form %}
 
-      {% bootstrap_button button_type="submit" content="Показать" %}
+      {% translate 'Show' as button_name %}
+      {% bootstrap_button button_type="submit" content=button_name %}
       
       <div class="form-check">
         <input type="checkbox" name="self_tasks" class="form-check-input" id="id_self_tasks">
-        <label class="form-check-label" for="id_self_tasks">Только свои задачи</label>
+        <label class="form-check-label" for="id_self_tasks">{% translate 'Only your own tasks' %}</label>
       </div>
     </form>
   </div>
@@ -31,11 +32,11 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Имя</th>
-      <th>Статус</th>
-      <th>Автор</th>
-      <th>Исполнитель</th>
-      <th>Дата создания</th>
+      <th>{% translate 'Name' %}</th>
+      <th>{% translate 'Status' %}</th>
+      <th>{% translate 'Author' %}</th>
+      <th>{% translate 'Executor' %}</th>
+      <th>{% translate 'Created at' %}</th>
       <th></th>
     </tr>
   </thead>
@@ -51,9 +52,9 @@
       <td>{{ task.executor }}</td>
       <td>{{ task.creation_date|date:'d.m.Y H:i' }}</td>
       <td>
-        <a href="{% url 'edit_task' task.pk %}">Изменить</a>
+        <a href="{% url 'edit_task' task.pk %}">{% translate 'Update' %}</a>
         <br>
-        <a href="{% url 'delete_task' task.pk %}">Удалить</a>
+        <a href="{% url 'delete_task' task.pk %}">{% translate 'Delete' %}</a>
       </td>
     </tr>
     {% endfor %}

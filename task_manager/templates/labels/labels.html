@@ -5,14 +5,14 @@
 {% load static %}
 
 {% block content %}
-<h1 class="my-4"> Метки</h1>
-<a class="nav-link" href="{% url 'create_label' %}">Создать метку</a>
+<h1 class="my-4">{% translate 'Labels' %}</h1>
+<a class="nav-link" href="{% url 'create_label' %}">{% translate 'Create label' %}</a>
 <table class="table table-striped">
     <thead>
       <tr>
         <th>ID</th>
-        <th>Имя</th>
-        <th>Дата создания</th>
+        <th>{% translate 'Name' %}</th>
+        <th>{% translate 'Created at' %}</th>
         <th></th>
       </tr>
     </thead>
@@ -23,9 +23,9 @@
           <td>{{ label.name }}</td>
           <td>{{ label.creation_date|date:'d.m.Y H:i' }}</td>
           <td>
-            <a href="{% url 'edit_label' label.pk %}">Изменить</a>
+            <a href="{% url 'edit_label' label.pk %}">{% translate 'Update' %}</a>
             <br>
-            <a href="{% url 'delete_label' label.pk %}">Удалить</a>
+            <a href="{% url 'delete_label' label.pk %}">{% translate 'Delete' %}</a>
           </td>
         </tr>
         {% endfor %}

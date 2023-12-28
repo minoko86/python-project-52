@@ -7,7 +7,7 @@ class VerboseLoginRequiredMixin(LoginRequiredMixin):
 
     login_url = 'login'
     permission_denied_message = _(
-        'Вы не авторизованы! Пожалуйста, выполните вход.'
+        'You are not logged in! Please log in.'
     )
 
     def handle_no_permission(self):

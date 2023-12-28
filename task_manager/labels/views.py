@@ -13,7 +13,7 @@ class LabelCreate(VerboseLoginRequiredMixin, SuccessMessageMixin, CreateView):
     form_class = CreateLabelForm
     template_name = 'labels/create.html'
     success_url = reverse_lazy('labels')
-    success_message = _("Метка успешно создана")
+    success_message = _("Label is successfully created")
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -31,11 +31,11 @@ class LabelEdit(VerboseLoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'labels/update.html'
     form_class = CreateLabelForm
     success_url = reverse_lazy('labels')
-    success_message = _("Метка успешно изменена")
+    success_message = _("Label is successfully updated")
 
 
 class LabelDelete(VerboseLoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Label
     template_name = 'auth/label_confirm_delete.html'
     success_url = reverse_lazy('labels')
-    success_message = _("Метка успешно удалена")
+    success_message = _("Label is successfully deleted")

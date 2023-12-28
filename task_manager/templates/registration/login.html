@@ -7,7 +7,7 @@
 {% block show_messages %}{% endblock %}
 {% block content %}
 <div class="container wrapper flex-grow-1">
-    <h1 class="my-4">Вход</h1>
+    <h1 class="my-4">{% translate 'Log in' %}</h1>
     <form method="post">
         {%csrf_token %}
         {% if messages %}
@@ -26,16 +26,17 @@
             {% endfor %}
         {% endif %}
         <div class="mb-3">
-            <label class="form-label" for="id_username">Имя пользователя</label>
+            <label class="form-label" for="id_username">{% translate 'User name' %}</label>
             <input type="text" name="username" autofocus="" autocapitalize="none"
             autocomplete="username" maxlength="150" class="form-control"
             placeholder="Имя пользователя" required="" id="id_username">
         </div>
         <div class="mb-3">
-            <label class="form-label" for="id_password">Пароль</label>
-            <input type="password" name="password" autocomplete="current-password" class="form-control" placeholder="Пароль" required="" id="id_password">
+            <label class="form-label" for="id_password">{% translate 'Password' as button_name %}</label>
+            <input type="password" name="password" autocomplete="current-password" class="form-control" placeholder=button_name required="" id="id_password">
         </div>
-        <input class="btn btn-primary" type="submit" value="Войти">
+        {% translate 'Enter' as button_name %}
+        <input class="btn btn-primary" type="submit" value=button_name>
     </form>
 </div>
 {% endblock %}

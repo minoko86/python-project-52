@@ -14,6 +14,7 @@
 
   {% bootstrap_form form %}
 
-  {% bootstrap_button button_type="submit" content="Зарегистрировать" %}      
+  {% translate 'Register' as button_name %}
+  {% bootstrap_button button_type="submit" content=button_name %}      
 </form>
 {% endblock %}

@@ -5,14 +5,14 @@
 {% load static %}
 
 {% block content %}
-<h1 class="my-4"> Статусы</h1>
-<a class="nav-link" href="{% url 'create_status' %}">Создать статус</a>
+<h1 class="my-4">{% translate 'Statuses' %}</h1>
+<a class="nav-link" href="{% url 'create_status' %}">{% translate 'Create status' %}</a>
 <table class="table table-striped">
     <thead>
       <tr>
         <th>ID</th>
-        <th>Имя</th>
-        <th>Дата создания</th>
+        <th>{% translate 'Name' %}</th>
+        <th>{% translate 'Created at' %}</th>
         <th></th>
       </tr>
     </thead>
@@ -23,9 +23,9 @@
           <td>{{ status.name }}</td>
           <td>{{ status.creation_date|date:'d.m.Y H:i' }}</td>
           <td>
-            <a href="{% url 'edit_status' status.pk %}">Изменить</a>
+            <a href="{% url 'edit_status' status.pk %}">{% translate 'Update' %}</a>
             <br>
-            <a href="{% url 'delete_status' status.pk %}">Удалить</a>
+            <a href="{% url 'delete_status' status.pk %}">{% translate 'Delete' %}</a>
           </td>
         </tr>
         {% endfor %}

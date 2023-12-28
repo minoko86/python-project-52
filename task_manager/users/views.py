@@ -14,7 +14,7 @@ class UserRegister(SuccessMessageMixin, CreateView):
     form_class = RegisterUserForm
     template_name = 'registration.html'
     success_url = reverse_lazy('login')
-    success_message = _("Пользователь успешно зарегистрирован")
+    success_message = _("User is successfully created")
 
 
 class UsersShow(ListView):
@@ -29,7 +29,7 @@ class UserEdit(VerboseLoginRequiredMixin, UserPassesTestMixin,
     template_name = 'user_update.html'
     success_url = reverse_lazy('users')
     form_class = RegisterUserForm
-    success_message = _("Пользователь успешно изменен!")
+    success_message = _("User is successfully updated!")
 
     def test_func(self):
         user = self.get_object()
@@ -41,7 +41,7 @@ class UserDelete(VerboseLoginRequiredMixin, UserPassesTestMixin,
     model = User
     template_name = 'auth/user_confirm_delete.html'
     success_url = reverse_lazy('users')
-    success_message = _("Пользователь успешно удален")
+    success_message = _("User is successfully deleted")
 
     def test_func(self):
         user = self.get_object()

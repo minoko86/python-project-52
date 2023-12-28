@@ -23,7 +23,7 @@ class TaskCreate(VerboseLoginRequiredMixin, SuccessMessageMixin, CreateView):
     form_class = CreateTaskForm
     template_name = 'tasks/create.html'
     success_url = reverse_lazy('tasks')
-    success_message = _("Задача успешно создана")
+    success_message = _("Task is successfully created")
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -56,7 +56,7 @@ class TaskEdit(VerboseLoginRequiredMixin, UserPassesTestMixin,
     template_name = 'tasks/update.html'
     form_class = CreateTaskForm
     success_url = reverse_lazy('tasks')
-    success_message = _("Задача успешно изменена")
+    success_message = _("Task successfully updated")
 
     def test_func(self):
         task = self.get_object()
@@ -68,7 +68,7 @@ class TaskDelete(VerboseLoginRequiredMixin, UserPassesTestMixin,
     model = Task
     template_name = 'auth/task_confirm_delete.html'
     success_url = reverse_lazy('tasks')
-    success_message = _("Задача успешно удалена")
+    success_message = _("Task successfully deleted")
 
     def test_func(self):
         task = self.get_object()

@@ -14,7 +14,7 @@ class StatusCreate(VerboseLoginRequiredMixin, SuccessMessageMixin,
     form_class = CreateStatusForm
     template_name = 'statuses/create.html'
     success_url = reverse_lazy('statuses')
-    success_message = _("Статус успешно создан")
+    success_message = _("Status successfully created")
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -32,7 +32,7 @@ class StatusEdit(VerboseLoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'statuses/update.html'
     form_class = CreateStatusForm
     success_url = reverse_lazy('statuses')
-    success_message = _("Статус успешно изменен")
+    success_message = _("Status successfully updated")
 
 
 class StatusDelete(VerboseLoginRequiredMixin, SuccessMessageMixin,
@@ -40,4 +40,4 @@ class StatusDelete(VerboseLoginRequiredMixin, SuccessMessageMixin,
     model = Status
     template_name = 'auth/status_confirm_delete.html'
     success_url = reverse_lazy('statuses')
-    success_message = _("Статус успешно удален")
+    success_message = _("Status successfully deleted")

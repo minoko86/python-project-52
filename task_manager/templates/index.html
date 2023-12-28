@@ -9,11 +9,11 @@
 <html lang="ru-ru">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Менеджер задач Hexlet</title>
+    <title>{% translate 'Task Manager' %}</title>
   </head>
   <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="nav-link" href="{% url 'index' %}">Менеджер задач</a>
+      <a class="nav-link" href="{% url 'index' %}">{% translate 'Task Manager' %}</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarToggleExternalContent">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,13 +24,13 @@
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'statuses' %}">Статусы</a>
+            <a class="nav-link" href="{% url 'statuses' %}">{% translate 'Statuses' %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'labels' %}">Метки</a>
+            <a class="nav-link" href="{% url 'labels' %}">{% translate 'Labels' %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'tasks' %}">Задачи</a>
+            <a class="nav-link" href="{% url 'tasks' %}">{% translate 'Tasks' %}</a>
           </li>
           <li class="nav-item">
             <form id="logout-form" action="{% url 'logout' %}" method="POST">
@@ -61,10 +61,10 @@
       <h1 class="my-4"></h1>
       <div class="card">
         <div class="card-body p-5 bg-light">
-          <div class="display-4">Привет от Хекслета!</div>
-          <p class="lead">Практические курсы по программированию</p>
+          <div class="display-4">{% translate 'Greetings from Hexlet!' %}</div>
+          <p class="lead">{% translate 'Practical programming courses' %}</p>
           <hr>
-          <a class="btn btn-primary btn-lg" href="https://ru.hexlet.io/">Узнать больше</a>
+          <a class="btn btn-primary btn-lg" href="https://ru.hexlet.io/">{% translate 'To learn more' %}</a>
         </div>
       </div>
     {% endblock %}
