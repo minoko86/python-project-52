@@ -98,11 +98,13 @@ msgstr "Удалить задачу?"
 msgid "Delete user?"
 msgstr "Удалить пользователя?"
 
-#: task_manager/templates/index.html:13 task_manager/templates/index.html:17
+#: task_manager/templates/index.html:13 
+#: task_manager/templates/index.html:17
 msgid "Task Manager"
 msgstr "Менеджер задач"
 
-#: task_manager/templates/index.html:24 task_manager/templates/login.html:8
+#: task_manager/templates/index.html:24 
+#: task_manager/templates/login.html:8
 #: task_manager/templates/users.html:8
 msgid "Users"
 msgstr "Пользователи"
@@ -203,7 +205,8 @@ msgstr "Измение метки"
 msgid "User name"
 msgstr "Имя пользователя"
 
-#: task_manager/templates/login.html:14 task_manager/templates/users.html:14
+#: task_manager/templates/login.html:14 
+#: task_manager/templates/users.html:14
 msgid "Full name"
 msgstr "Полное имя"
 
