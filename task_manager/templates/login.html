@@ -1,35 +1,37 @@
 {% extends "index.html" %}
 
-{% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
-{% load static %}
-
 {% block content %}
-<h1 class="my-4">{% translate 'Users' %}</h1>
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>{% translate 'User name' %}</th>
-        <th>{% translate 'Full name' %}</th>
-        <th>{% translate 'Created at' %}</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-        {% for user in object_list %}
-        <tr>
-          <td>{{ user.id }}</td>
-          <td>{{ user.username }}</td>
-          <td>{{ user.first_name }} {{ user.last_name }}</td>
-          <td>{{ user.date_joined|date:'d.m.Y H:i' }}</td>
-          <td>
-            <a href="{% url 'edit' user.pk %}">{% translate 'Update' %}</a>
-            <br>
-            <a href="{% url 'delete' user.pk %}">{% translate 'Delete' %}</a>
-          </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-  {% endblock %}
+<div class="container wrapper flex-grow-1">
+    <h1 class="my-4">{% translate 'Log in' %}</h1>
+    <form method="post">
+        {%csrf_token %}
+        {% if messages %}
+            {%for message in messages %}
+                {% if message.tag == error%}
+                <ul class="list-unstyled text-danger">
+                    <li>
+                        {{ message }}
+                    </li>
+                </ul>
+                {% else %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ message }}
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        <div class="mb-3">
+            <label class="form-label" for="id_username">{% translate 'User name' %}</label>
+            <input type="text" name="username" autofocus="" autocapitalize="none"
+            autocomplete="username" maxlength="150" class="form-control"
+            placeholder="Имя пользователя" required="" id="id_username">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="id_password">{% translate 'Password' as button_name %}</label>
+            <input type="password" name="password" autocomplete="current-password" class="form-control" placeholder=button_name required="" id="id_password">
+        </div>
+        {% translate 'Enter' as button_name2 %}
+        <input class="btn btn-primary" type="submit" value=button_name2>
+    </form>
+</div>
+{% endblock %}
