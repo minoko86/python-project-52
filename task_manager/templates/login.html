@@ -1,5 +1,8 @@
 {% extends "index.html" %}
 
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load static %}
 {% block content %}
 <div class="container wrapper flex-grow-1">
     <h1 class="my-4">{% translate 'Log in' %}</h1>
@@ -30,8 +33,8 @@
             <label class="form-label" for="id_password">{% translate 'Password' as button_name %}</label>
             <input type="password" name="password" autocomplete="current-password" class="form-control" placeholder=button_name required="" id="id_password">
         </div>
-        {% translate 'Enter' as button_name2 %}
-        <input class="btn btn-primary" type="submit" value=button_name2>
+        {% comment %} {% translate 'Enter' as button_name2 %} {% endcomment %}
+        <input class="btn btn-primary" type="submit" value={% translate 'Enter' %}>
     </form>
 </div>
 {% endblock %}
