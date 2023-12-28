@@ -30,8 +30,8 @@
             placeholder="Имя пользователя" required="" id="id_username">
         </div>
         <div class="mb-3">
-            <label class="form-label" for="id_password">{% translate 'Password' as button_name %}</label>
-            <input type="password" name="password" autocomplete="current-password" class="form-control" placeholder=button_name required="" id="id_password">
+            <label class="form-label" for="id_password">{% translate 'Password' %}</label>
+            <input type="password" name="password" autocomplete="current-password" class="form-control" placeholder={% translate 'Password' %} required="" id="id_password">
         </div>
         {% comment %} {% translate 'Enter' as button_name2 %} {% endcomment %}
         <input class="btn btn-primary" type="submit" value={% translate 'Enter' %}>
