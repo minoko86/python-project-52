@@ -1,3 +1,9 @@
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/minoko86/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/minoko86/python-project-52/actions)
+[![Python CI](https://github.com/minoko86/python-project-52/actions/workflows/pyci.yml/badge.svg)](https://github.com/minoko86/python-project-52/actions/workflows/pyci.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/015fd2c186d111fa7f10/maintainability)](https://codeclimate.com/github/minoko86/python-project-52/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/015fd2c186d111fa7f10/test_coverage)](https://codeclimate.com/github/minoko86/python-project-52/test_coverage)
+
 # Task Manager
 
 Task Manager – system for managing tasks. It allows you to create tasks, assign executers, labels, statuses and change them. To work with the system login and authentication are required.
@@ -34,9 +40,3 @@ make setup
 ## Contributions
 
 Contributions to the Task Manager project are always welcome! If you encounter any issues or have suggestions for enhancements, please submit an issue or pull request. 
-
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/minoko86/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/minoko86/python-project-52/actions)
-[![Python CI](https://github.com/minoko86/python-project-52/actions/workflows/pyci.yml/badge.svg)](https://github.com/minoko86/python-project-52/actions/workflows/pyci.yml)
-[![Maintainability](https://api.codeclimate.com/v1/badges/015fd2c186d111fa7f10/maintainability)](https://codeclimate.com/github/minoko86/python-project-52/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/015fd2c186d111fa7f10/test_coverage)](https://codeclimate.com/github/minoko86/python-project-52/test_coverage)
