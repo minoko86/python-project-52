@@ -34,8 +34,7 @@ jobs:
           DB_ENGINE: SQLite
           SECRET_KEY: secret
       - name: Publish code coverage
-        uses: paambaati/codeclimate-action@v5.0.0
-        if: github.ref_name == 'main'
+        uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
