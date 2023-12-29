@@ -1,4 +1,5 @@
-from django.test import TestCase, Client
+# from django.test import TestCase, Client
+from django.test import TransactionTestCase, Client
 # from django.contrib.auth.models import User
 from task_manager.users.models import User
 from django.urls import reverse
@@ -6,7 +7,9 @@ from django.urls import reverse
 from task_manager.labels.models import Label
 
 
-class LabelsTest(TestCase):
+class LabelsTest(TransactionTestCase):
+    reset_sequences = True
+
     def setUp(self):
         self.client = Client()
         self.user = User.objects.create_user(
