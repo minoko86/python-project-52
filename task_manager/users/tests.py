@@ -7,6 +7,7 @@ from django.urls import reverse
 
 class UserRegisterTest(TransactionTestCase):
     reset_sequences = True
+
     def setUp(self):
         self.client = Client()
         self.register_url = reverse('registration')
