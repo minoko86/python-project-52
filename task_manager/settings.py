@@ -49,6 +49,7 @@ ALLOWED_HOSTS = [
     'webserver',
     LOCAL_HOST,
     'task-meneger-new.onrender.com',
+    'dpg-cm4lkogcmk4c73ckllt0-a',
 ]
 
 EXTERNAL_HOSTNAME = os.getenv('EXTERNAL_HOSTNAME')
