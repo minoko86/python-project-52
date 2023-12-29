@@ -50,6 +50,7 @@ ALLOWED_HOSTS = [
     LOCAL_HOST,
     'task-meneger-new.onrender.com',
     'dpg-cm4lkogcmk4c73ckllt0-a',
+    'dpg-cm4lkogcmk4c73ckllt0-a.oregon-postgres.render.com',
 ]
 
 EXTERNAL_HOSTNAME = os.getenv('EXTERNAL_HOSTNAME')
