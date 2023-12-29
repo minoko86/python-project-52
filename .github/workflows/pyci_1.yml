@@ -1,53 +1,55 @@
-name: Python CI_1
+name: CI
 
 on:
-  - push
-  - pull_request
+    push:
+      branches:
+        - '**'
+      tags:
+        - '**'
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        # we want to test our package on several versions of Python
-        python-version: ['3.10']
-    steps:
-      - uses: actions/checkout@v3
-            # Poetry cache depends on OS, Python version and Poetry version.
-      - name: Cache Poetry cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/pypoetry
-          key: poetry-cache-${{ runner.os }}-${{ env.PYTHON_VERSION }}-${{ env.POETRY_VERSION }}
-      # virtualenv cache should depends on OS, Python version and `poetry.lock` (and optionally workflow files).
-      - name: Cache Packages
-        uses: actions/cache@v2
-        with:
-          path: ~/.local
-          key: poetry-${{ runner.os }}-${{ env.PYTHON_VERSION }}-${{ hashFiles('**/poetry.lock') }}-${{ hashFiles('.github/workflows/*.yml') }}
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-        # make depends on poetry
-      - name: Install dependencies
-        run: |
-          pip install poetry
-          make install
-      - name: Run linter and pytest
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: |
-          make lint
-          make test
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v3.2.0
-        if: github.ref_name == 'main'
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          coverageCommand: make test-coverage
-          debug: true
+    build:
+        runs-on: ubuntu-latest
+        services:
+          db:
+            image: postgres:15
+            env:
+              POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+              POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+              POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+            ports:
+              - 5432:5432
+            options:
+              --health-cmd pg_isready
+              --health-interval 10s
+              --health-timeout 5s
+              --health-retries 5
+        steps:
+            - uses: actions/checkout@v3
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                python-version: '3.10'
+            - name: Install dependencies
+              run: |
+                pip install poetry
+                make install
+            - name: Run linter
+              run: |
+                make lint
+            - name: Run tests
+              env:
+                SECRET_KEY: ${{ secrets.SECRET_KEY }}
+                DATABASE_URL: ${{ secrets.DATABASE_URL }}
+              run: |
+                make test
+            - name: Test & publish code coverage
+              uses: paambaati/codeclimate-action@v3.2.0
+              if: github.ref_name == 'main'
+              env:
+                SECRET_KEY: ${{ secrets.SECRET_KEY }}
+                DATABASE_URL: ${{ secrets.DATABASE_URL }}
+                CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+              with:
+                coverageCommand: make test-coverage
+                debug: true
