@@ -25,6 +25,8 @@ serv:
 dev:
 	$(MANAGE) runserver
 
+build:
+	./build.sh
 # .PHONY: test
 # test:
 # 	$(MANAGE) test
