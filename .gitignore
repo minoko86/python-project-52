@@ -5,3 +5,5 @@ dist/
 db.sqlite3
 .coverage
 .env
+coverage.xml
+.venv/
