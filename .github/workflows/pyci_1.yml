@@ -36,9 +36,8 @@ jobs:
           make install
       - name: Run linter and pytest
         env:
-          DJANGO_SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          ROLLBAR_ACCESS_TOKEN: ${{ secrets.ROLLBAR_TOKEN }}
-        #   MY_TESTS: ${{ secrets.MY_TESTS }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
           make lint
           make test
@@ -46,6 +45,8 @@ jobs:
         uses: paambaati/codeclimate-action@v3.2.0
         if: github.ref_name == 'main'
         env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: make test-coverage

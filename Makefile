@@ -31,9 +31,9 @@ build:
 # test:
 # 	$(MANAGE) test
 
-# .PHONY: coverage
-# coverage:
-# 	poetry run coverage run manage.py test task_manager/users -v 2
+.PHONY: coverage
+coverage:
+	poetry run coverage run manage.py test task_manager/users -v 2
 
 test:
 	$(MANAGE) test --traceback -v 2
