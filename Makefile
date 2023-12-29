@@ -58,4 +58,4 @@ lint:
 # 	poetry run coverage run --source='task_manager' manage.py test task_manager
 # 	poetry run coverage xml
 test-coverage:
-	poetry run coverage xml	
+	poetry run coverage run manage.py test task_manager/users -v 2
