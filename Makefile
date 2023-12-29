@@ -52,5 +52,8 @@ lint:
 	poetry run flake8 task_manager --exclude migrations
 
 .PHONY: test-coverage
+# test-coverage:
+# 	poetry run coverage run --source='.' manage.py test
 test-coverage:
-	poetry run coverage run --source='.' manage.py test
+	poetry run coverage run --source='task_manager' manage.py test task_manager
+	poetry run coverage xml
