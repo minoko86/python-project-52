@@ -148,7 +148,7 @@ DATABASES = {
         default=os.getenv(
             'DATABASE_URL'
         ),
-        # conn_max_age=600
+        conn_max_age=600
     )
 }
 
