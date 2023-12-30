@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-30 09:52+0500\n"
+"POT-Creation-Date: 2023-12-30 11:59+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,32 +63,32 @@ msgstr "Статус успешно изменен"
 msgid "Status successfully deleted"
 msgstr "Статус успешно удален"
 
-#: task_manager/tasks/filters.py:11 
-#: task_manager/tasks/forms.py:19
+#: task_manager/tasks/filters.py:11 task_manager/tasks/forms.py:19
 #: task_manager/templates/tasks/task.html:27
 #: task_manager/templates/tasks/tasks.html:36
 msgid "Status"
 msgstr "Статус"
 
-#: task_manager/tasks/filters.py:14 
-#: task_manager/tasks/forms.py:22
+#: task_manager/tasks/filters.py:14 task_manager/tasks/forms.py:22
 #: task_manager/templates/tasks/task.html:23
 #: task_manager/templates/tasks/tasks.html:38
 msgid "Executor"
 msgstr "Исполнитель"
 
-#: task_manager/tasks/filters.py:17 
-#: task_manager/tasks/forms.py:26
+#: task_manager/tasks/filters.py:17
+msgid "Label"
+msgstr "Меткa"
+
+#: task_manager/tasks/forms.py:13 task_manager/tasks/forms.py:15
+msgid "Description"
+msgstr "Описание"
+
+#: task_manager/tasks/forms.py:26 
 #: task_manager/templates/index.html:29
 #: task_manager/templates/labels/labels.html:8
 #: task_manager/templates/tasks/task.html:36
 msgid "Labels"
 msgstr "Метки"
-
-#: task_manager/tasks/forms.py:13 
-#: task_manager/tasks/forms.py:15
-msgid "Description"
-msgstr "Описание"
 
 #: task_manager/tasks/views.py:26
 msgid "Task is successfully created"
