@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-28 13:59+0500\n"
+"POT-Creation-Date: 2023-12-30 09:52+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,13 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: task_manager/labels/forms.py:7 task_manager/statuses/forms.py:7
+#: task_manager/tasks/forms.py:11 task_manager/templates/labels/labels.html:14
+#: task_manager/templates/statuses/statuses.html:14
+#: task_manager/templates/tasks/tasks.html:35
+msgid "Name"
+msgstr "Имя"
 
 #: task_manager/labels/views.py:16
 msgid "Label is successfully created"
@@ -36,11 +43,11 @@ msgstr "Метка успешно удалена"
 msgid "You are not logged in! Please log in."
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-#: task_manager/settings.py:201
+#: task_manager/settings.py:200
 msgid "English"
 msgstr ""
 
-#: task_manager/settings.py:202
+#: task_manager/settings.py:201
 msgid "Russian"
 msgstr ""
 
@@ -55,6 +62,33 @@ msgstr "Статус успешно изменен"
 #: task_manager/statuses/views.py:43
 msgid "Status successfully deleted"
 msgstr "Статус успешно удален"
+
+#: task_manager/tasks/filters.py:11 
+#: task_manager/tasks/forms.py:19
+#: task_manager/templates/tasks/task.html:27
+#: task_manager/templates/tasks/tasks.html:36
+msgid "Status"
+msgstr "Статус"
+
+#: task_manager/tasks/filters.py:14 
+#: task_manager/tasks/forms.py:22
+#: task_manager/templates/tasks/task.html:23
+#: task_manager/templates/tasks/tasks.html:38
+msgid "Executor"
+msgstr "Исполнитель"
+
+#: task_manager/tasks/filters.py:17 
+#: task_manager/tasks/forms.py:26
+#: task_manager/templates/index.html:29
+#: task_manager/templates/labels/labels.html:8
+#: task_manager/templates/tasks/task.html:36
+msgid "Labels"
+msgstr "Метки"
+
+#: task_manager/tasks/forms.py:13 
+#: task_manager/tasks/forms.py:15
+msgid "Description"
+msgstr "Описание"
 
 #: task_manager/tasks/views.py:26
 msgid "Task is successfully created"
@@ -78,13 +112,6 @@ msgstr "Удалить метку?"
 #: task_manager/templates/auth/user_confirm_delete.html:11
 msgid "Yes, delete"
 msgstr "Да, удалить"
-
-#: task_manager/templates/auth/label_confirm_delete.html:13
-#: task_manager/templates/auth/status_confirm_delete.html:13
-#: task_manager/templates/auth/task_confirm_delete.html:13
-#: task_manager/templates/auth/user_confirm_delete.html:13
-msgid "cancellation"
-msgstr "Отмена"
 
 #: task_manager/templates/auth/status_confirm_delete.html:8
 msgid "Delete status?"
@@ -111,18 +138,13 @@ msgstr "Пользователи"
 msgid "Statuses"
 msgstr "Статусы"
 
-#: task_manager/templates/index.html:29
-#: task_manager/templates/labels/labels.html:8
-#: task_manager/templates/tasks/task.html:36
-msgid "Labels"
-msgstr "Метки"
-
 #: task_manager/templates/index.html:32
 #: task_manager/templates/tasks/tasks.html:12
 msgid "Tasks"
 msgstr "Задачи"
 
-#: task_manager/templates/index.html:42 task_manager/templates/login.html:8
+#: task_manager/templates/index.html:42 
+#: task_manager/templates/login.html:8
 #: task_manager/templates/registration/login.html:10
 msgid "Log in"
 msgstr "Вход"
@@ -154,12 +176,6 @@ msgstr "Создать метку"
 #: task_manager/templates/tasks/create.html:18
 msgid "Create"
 msgstr "Создать"
-
-#: task_manager/templates/labels/labels.html:14
-#: task_manager/templates/statuses/statuses.html:14
-#: task_manager/templates/tasks/tasks.html:35
-msgid "Name"
-msgstr "Имя"
 
 #: task_manager/templates/labels/labels.html:15
 #: task_manager/templates/statuses/statuses.html:15
@@ -199,12 +215,13 @@ msgstr "Измение метки"
 msgid "User name"
 msgstr "Имя пользователя"
 
-#: task_manager/templates/login.html:33 task_manager/templates/login.html:34
+#: task_manager/templates/login.html:33 
+#: task_manager/templates/login.html:34
 #: task_manager/templates/registration/login.html:35
 msgid "Password"
 msgstr "Пароль"
 
-#: task_manager/templates/login.html:38
+#: task_manager/templates/login.html:36
 #: task_manager/templates/registration/login.html:38
 msgid "Enter"
 msgstr "Войти"
@@ -235,16 +252,6 @@ msgstr "Просмотр задачи"
 #: task_manager/templates/tasks/tasks.html:37
 msgid "Author"
 msgstr "Автор"
-
-#: task_manager/templates/tasks/task.html:23
-#: task_manager/templates/tasks/tasks.html:38
-msgid "Executor"
-msgstr "Исполнитель"
-
-#: task_manager/templates/tasks/task.html:27
-#: task_manager/templates/tasks/tasks.html:36
-msgid "Status"
-msgstr "Статус"
 
 #: task_manager/templates/tasks/tasks.html:21
 msgid "Show"

@@ -1,21 +1,20 @@
 import django_filters
-# from django.contrib.auth.models import User
-
 from task_manager.statuses.models import Status
 from task_manager.tasks.models import Task
 from task_manager.labels.models import Label
 from task_manager.users.models import User
+from django.utils.translation import gettext as _
 
 
 class TaskFilter(django_filters.FilterSet):
     status = django_filters.ModelChoiceFilter(
-        queryset=Status.objects.all(), label='Статус'
+        queryset=Status.objects.all(), label=_("Status")
     )
     executor = django_filters.ModelChoiceFilter(
-        queryset=User.objects.all(), label='Исполнитель'
+        queryset=User.objects.all(), label=_("Executor")
     )
     labels = django_filters.ModelMultipleChoiceFilter(
-        queryset=Label.objects.all(), label='Метка'
+        queryset=Label.objects.all(), label=_("Labels")
     )
 
     class Meta:
