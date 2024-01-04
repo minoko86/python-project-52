@@ -14,8 +14,16 @@ git clone https://github.com/minoko86/python-project-52
 cd python-project-52
 make install
 make setup 
-
+cp .env_example .env
 ```
+## environments
+- SECRET_KEY= (Secret key Django)
+- DEBUG=true 
+- EXTERNAL_HOSTNAME= (if you use an external host)
+- DB_ENGINE=SQLite (To use simple sqlite database use this record)
+- DATABASE_URL= (if you use an external DATABASE)
+- ROLLBAR_TOKEN= (Rollbar key)
+
 ## Features
 
 - Login and authentication
@@ -41,3 +49,15 @@ make setup
 ## Contributions
 
 Contributions to the Task Manager project are always welcome! If you encounter any issues or have suggestions for enhancements, please submit an issue or pull request. 
+
+### Start project
+
+- local start
+ 
+ `make dev`
+
+Use this app in browser on http://localhost:8000
+
+- start in production
+
+ `make serv`
