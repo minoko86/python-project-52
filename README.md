@@ -51,7 +51,7 @@ cp .env_example .env
 Contributions to the Task Manager project are always welcome! If you encounter any issues or have suggestions for enhancements, please submit an issue or pull request. 
 
 ### Start project
-
+```
 - local start
  
  `make dev`
